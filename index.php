@@ -1,5 +1,6 @@
 <?php
     require "class/Personnage.php";
+    require "class/Text.php";
 ?>
 
 <!DOCTYPE html>
@@ -30,6 +31,10 @@
         $harry->setAtk(130);
         $harry->attaque($merlin);
         var_dump($merlin);
+
+        // $nombre = new Text();
+        // echo $nombre->withZero(8);
+        echo Text::withZero(8);
     ?>
 </body>
 </html>

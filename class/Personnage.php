@@ -14,6 +14,12 @@ class Personnage{
     
     }
 
+    /**
+     * fonction qui permet de crier
+     *
+     * @param string $message
+     * @return void
+     */
     public function crier(string $message = "Crier"){
         echo "<div>".$this->name." dit : ".$message."</div>";
     }
