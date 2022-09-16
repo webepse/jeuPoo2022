@@ -15,8 +15,21 @@
         $merlin = new Personnage("Merlin",30,80);
         $harry = new Personnage("Harry",20,100);
 
+        $merlin->setAtk(40);
+
         var_dump($merlin);
         var_dump($harry);
+
+        $merlin->crier("Leeroy Jenkins");
+        $merlin->mort();
+
+        $harry->crier();
+        
+        $merlin->regenerer(30);
+        var_dump($merlin);
+        $harry->setAtk(130);
+        $harry->attaque($merlin);
+        var_dump($merlin);
     ?>
 </body>
 </html>
