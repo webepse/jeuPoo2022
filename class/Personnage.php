@@ -20,16 +20,32 @@ class Personnage{
      * @param string $message
      * @return void
      */
-    public function crier(string $message = "Crier"){
+    public function crier(string $message = "Crier"): void
+    {
         echo "<div>".$this->name." dit : ".$message."</div>";
     }
 
-    public function setAtk(int $atk)
+    /**
+     * Permet d'ajouter de la puissance d'attaque à un personnage
+     *
+     * @param integer $atk
+     * @return void
+     */
+    public function setAtk(int $atk): void
     {
         $this->atk += $atk;
+        // $this->atk = $this->atk + $atk;
+        //$this->atk++
+        //$this->atk--
     }
 
-    public function mort(){
+    /**
+     * Permet de vérifier et indiquer le statut mort/vie du personnage
+     *
+     * @return void
+     */
+    public function mort(): void
+    {
         if($this->vie <= 0){
             echo "<div>".$this->name." est mort</div>";
         }else{
@@ -37,7 +53,14 @@ class Personnage{
         }
     }
 
-    public function regenerer(int $vie = null){
+    /**
+     * Permet de redonner de la vie à un perso
+     *
+     * @param integer|null $vie
+     * @return void
+     */
+    public function regenerer(?int $vie = null): void
+    {
         if(is_null($vie))
         {
             $this->vie = self::MAX_VIE;
@@ -50,14 +73,26 @@ class Personnage{
         }
     }
 
-    public function pasNegatif()
+    /**
+     * Permet de vérifier que la vie n'est pas en dessous de 0
+     *
+     * @return void
+     */
+    public function pasNegatif(): void
     {
         if($this->vie < 0){
             $this->vie = 0;
         }
     }
 
-    public function attaque(Personnage $cible){
+    /**
+     * Permet d'attaquer un autre personnage
+     *
+     * @param Personnage $cible
+     * @return void
+     */
+    public function attaque(Personnage $cible): void
+    {
         $cible->vie -= $this->atk;
         $cible->pasNegatif();
     }

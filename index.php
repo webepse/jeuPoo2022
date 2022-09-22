@@ -1,6 +1,6 @@
 <?php
-    require "class/Personnage.php";
-    require "class/Text.php";
+   require "class/Autoloader.php";
+   Autoloader::register();
 ?>
 
 <!DOCTYPE html>
@@ -13,8 +13,11 @@
 </head>
 <body>
     <?php
-        $merlin = new Personnage("Merlin",30,80);
-        $harry = new Personnage("Harry",20,100);
+        $merlin = new Personnage("Merlin");
+        $harry = new Personnage("Harry");
+        $legolas = new Archer("Legolas");
+
+        var_dump($legolas);
 
         $merlin->setAtk(40);
 
